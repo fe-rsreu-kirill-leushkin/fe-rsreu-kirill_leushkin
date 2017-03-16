@@ -1,0 +1,80 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<title>Document</title>
+</head>
+<body>
+	<h1>Task 1</h1>
+	<form action="http://httpbin.org/post" method="post">
+		<fieldset>
+			<legend>Personal data</legend>
+			<br>
+			<label>Surname     <input type="text" name="surname" autofocus></label><br><br>
+			<label>First name  <input type="text" name="first_name"></label><br><br>
+			<label>Middle name <input type="text" name="middle_name"></label><br><br>
+			
+			You are <input type="radio" name="male" checked>male 
+					<input type="radio" name="female">female
+			<br><br>				
+			<label>Age <input type="number" name="age" min="18" max="101"></label><br><br>
+			<label>Country of Residence
+					<input list="countries" name="country">
+
+					<datalist id="countries">
+						<option value="Russia">
+						<option value="USA">
+						<option value="Japan">
+						<option value="Germany">
+						<option value="France">
+						<option value="England">
+					</datalist> 
+			</label> 
+			<br><br>
+			
+			City <input type="radio" name="ryazan" checked>Ryazan 
+					 <input type="radio" name="moscow">Moscow
+			
+			<br><br>
+			
+			<label> Photography <input type="file" name="photo"></label>
+		
+			<hr>
+		
+			<label for="title">Title</label>
+			<select name="title" id="title" multiple size="8">
+				<optgroup label="Technologies"></optgroup>
+					<option value="">Web Master</option>
+					<option value="">Database admin</option>
+					<option value="">Coputer designer</option>
+				<optgroup label="Finance"></optgroup>
+					<option value="">Economic</option>
+					<option value="">Managment</option>
+					<option value="">Budgetting</option>	
+			</select>
+			<br><br>
+			
+			<label>Salary</label><input type="range" min="0" max="2" step="1" value="2" name="rang">
+			<br><br>
+			
+			<textarea name="textar" cols="100">Tell us about yourself...</textarea>	
+		</fieldset>
+		
+		
+		
+			<fieldset>
+				<legend>Contact information</legend>
+				<br>
+				<label>Site <input type="text" name="site"></label><br><br>
+				<label>Email <input type="text" name="Email"></label><br><br>
+				<label>Phone <input type="text" name="phone"></label><br><br>
+			</fieldset>
+		
+		<br>
+
+			<label>Password <input type="text" name="password" required></label><br><br>
+			<button>Отправить</button> <button type="reset">Сбросить</button>
+		
+	</form>
+</body>
+</html>

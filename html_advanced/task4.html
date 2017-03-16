@@ -1,0 +1,178 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<title>Document</title>
+</head>
+<body>
+	<h1>The Form</h1>
+	<form action="http://httpbin.org/post" method="post">
+	<!-- <form action="http://httpbin.org/get" method="get"> -->
+		<fieldset>
+		<legend>Personal data</legend>
+		
+		<table>
+			<tr>
+				<td>
+					<label>First Name</label>
+				</td>
+				<td>
+					<input type="text" autofocus>
+				</td>
+			</tr>
+			
+			<tr>
+				<td>
+					<label>Middle Name</label>
+				</td>
+				<td>
+					<input type="text">
+				</td>
+			</tr>
+			
+			<tr>
+				<td>
+					<label>Surname Name</label>
+				</td>
+				<td>
+					<input type="text">
+				</td>
+			</tr>
+			
+			<tr>
+				<td rowspan="2">
+					<label>Sex</label>
+				</td>
+				<td>
+					<input type="radio" checked>Male
+				</td>
+			</tr>
+			<tr>
+				<td>
+					<input type="radio">Female
+				</td>
+			</tr>
+			
+			<tr>
+				<td>
+					<label>Age</label>
+				</td>
+				<td>
+					<input type="text">
+				</td>
+			</tr>
+			
+			<tr>
+				<td>
+					<label>Country</label>
+				</td>
+				<td>
+					<input list="countries">
+
+					<datalist id="countries">
+						<option value="Russia">
+						<option value="USA">
+						<option value="Japan">
+						<option value="Germany">
+						<option value="France">
+						<option value="England">
+					</datalist> 
+				</td>
+			</tr>
+			
+			<tr>
+				<td>
+					<label>City</label>
+				</td>
+				<td>
+					<input type="radio" name="rzn">Ryazan
+					<input type="radio" name="msc">Moscow
+				</td>
+			</tr>
+			
+			<tr>
+				<td>
+					<label>Photography</label>
+				</td>
+				<td>
+					<input type="file">
+				</td>
+			</tr>
+		</table>
+		
+		<hr>
+		
+		<table>
+			<tr>
+				<td>
+					<label for="title">Title</label>
+				</td>
+				<td>
+					<select name="title" id="title" multiple size="8">
+						<optgroup label="Technologies"></optgroup>
+							<option value="">Web Master</option>
+							<option value="">Database admin</option>
+							<option value="">Coputer designer</option>
+						<optgroup label="Finance"></optgroup>
+							<option value="">Economic</option>
+							<option value="">Managment</option>
+							<option value="">Budgetting</option>	
+					</select>
+				</td>
+			</tr>
+			
+			<tr>
+				<td>
+					<label>Salary</label>
+				</td>
+				<td>
+					<input type="range" name="salary">
+				</td>
+			</tr>
+		</table>
+		<textarea cols="60" rows="10" placeholder="Tell us about your self..."></textarea>
+	</fieldset>
+	
+		<fieldset>
+		<legend>Contact information</legend>
+		
+		<table>
+			<tr>
+				<td>
+					<label>Site</label>
+				</td>
+				<td>
+					<input type="text" name="site">
+				</td>
+			</tr>
+			
+			<tr>
+				<td>
+					<label>E-mail</label>
+				</td>
+				<td>
+					<input type="text" name="email">
+				</td>
+			</tr>
+			
+			<tr>
+				<td>
+					<label>Phone</label>
+				</td>
+				<td>
+					<input type="text" name="phone">
+				</td>
+			</tr>
+		</table>
+	</fieldset>
+	
+		<br>
+		<label>Password <input type="text" required></label>
+	
+		<hr>
+	
+		<button>Отправить</button>
+		<button type="reset">Сбросить</button>
+	</form>
+</body>
+</html>
