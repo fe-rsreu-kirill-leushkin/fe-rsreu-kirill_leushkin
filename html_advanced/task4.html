@@ -14,60 +14,60 @@
 		<table>
 			<tr>
 				<td>
-					<label>First Name</label>
+					<label for="fname">First Name</label>
 				</td>
 				<td>
-					<input type="text" autofocus>
-				</td>
-			</tr>
-			
-			<tr>
-				<td>
-					<label>Middle Name</label>
-				</td>
-				<td>
-					<input type="text">
+					<input type="text" id="fname" name="First name" autofocus>
 				</td>
 			</tr>
 			
 			<tr>
 				<td>
-					<label>Surname Name</label>
+					<label for="mname">Middle Name</label>
 				</td>
 				<td>
-					<input type="text">
+					<input type="text" id="mname" name="Middle name">
+				</td>
+			</tr>
+			
+			<tr>
+				<td>
+					<label for="sname">Surname Name</label>
+				</td>
+				<td>
+					<input type="text" id="sname" name="Surname name">
 				</td>
 			</tr>
 			
 			<tr>
 				<td rowspan="2">
-					<label>Sex</label>
+					<span>Sex</span>
 				</td>
 				<td>
-					<input type="radio" checked>Male
+					<label><input type="radio" name="Gender" value="Male" checked>Male</label>
 				</td>
 			</tr>
 			<tr>
 				<td>
-					<input type="radio">Female
-				</td>
-			</tr>
-			
-			<tr>
-				<td>
-					<label>Age</label>
-				</td>
-				<td>
-					<input type="number" min="18" max="101">
+					<label><input type="radio" name="Gender" value="Female">Female</label>
 				</td>
 			</tr>
 			
 			<tr>
 				<td>
-					<label>Country</label>
+					<label for="age">Age</label>
 				</td>
 				<td>
-					<input list="countries">
+					<input type="number" min="18" max="101" id="age" name="Age">
+				</td>
+			</tr>
+			
+			<tr>
+				<td>
+					<label for="country">Country</label>
+				</td>
+				<td>
+					<input list="countries" id="country" name="Country">
 
 					<datalist id="countries">
 						<option value="Russia">
@@ -82,20 +82,20 @@
 			
 			<tr>
 				<td>
-					<label>City</label>
+					<span>City</span>
 				</td>
 				<td>
-					<input type="radio" name="rzn">Ryazan
-					<input type="radio" name="msc">Moscow
+					<label><input type="radio" name="City" value="Ryazan">Ryazan</label>
+					<label><input type="radio" name="City" value="Moscow">Moscow</label>
 				</td>
 			</tr>
 			
 			<tr>
 				<td>
-					<label>Photography</label>
+					<label for="photo">Photography</label>
 				</td>
 				<td>
-					<input type="file">
+					<input type="file" id="photo" name="Photo">
 				</td>
 			</tr>
 		</table>
@@ -110,27 +110,27 @@
 				<td>
 					<select name="title" id="title" multiple size="8">
 						<optgroup label="Technologies"></optgroup>
-							<option value="">Web Master</option>
-							<option value="">Database admin</option>
-							<option value="">Coputer designer</option>
+							<option value="Web Master">Web Master</option>
+							<option value="Database admin">Database admin</option>
+							<option value="Coputer designer">Coputer designer</option>
 						<optgroup label="Finance"></optgroup>
-							<option value="">Economic</option>
-							<option value="">Managment</option>
-							<option value="">Budgetting</option>	
+							<option value="Economic">Economic</option>
+							<option value="Managment">Managment</option>
+							<option value="Budgetting">Budgetting</option>	
 					</select>
 				</td>
 			</tr>
 			
 			<tr>
 				<td>
-					<label>Salary</label>
+					<label for="sal">Salary</label>
 				</td>
 				<td>
-					<input type="range" name="salary">
+					<input type="range" min="0" max="20" step="1" value="20" name="rang">
 				</td>
 			</tr>
 		</table>
-		<textarea cols="60" rows="10" placeholder="Tell us about your self..."></textarea>
+		<textarea cols="60" rows="10" name="About my self" placeholder="Tell us about your self..."></textarea>
 	</fieldset>
 	
 		<fieldset>
@@ -139,35 +139,35 @@
 		<table>
 			<tr>
 				<td>
-					<label>Site</label>
+					<label for="site">Site</label>
 				</td>
 				<td>
-					<input type="text" name="site">
-				</td>
-			</tr>
-			
-			<tr>
-				<td>
-					<label>E-mail</label>
-				</td>
-				<td>
-					<input type="text" name="email">
+					<input type="text" name="Site" id="site">
 				</td>
 			</tr>
 			
 			<tr>
 				<td>
-					<label>Phone</label>
+					<label for="email">E-mail</label>
 				</td>
 				<td>
-					<input type="text" name="phone">
+					<input type="text" name="Email" id="email">
+				</td>
+			</tr>
+			
+			<tr>
+				<td>
+					<label for="phone">Phone</label>
+				</td>
+				<td>
+					<input type="text" name="Phone" id="phone">
 				</td>
 			</tr>
 		</table>
 	</fieldset>
 	
 		<br>
-		<label>Password <input type="text" required></label>
+		<label>Password<input type="text" name="Password" required></label>
 	
 		<hr>
 	
