@@ -1,0 +1,41 @@
+body {
+	background-image: url('2.jpg');
+	background-size: cover;
+	font-family: 'Sofia', cursive;
+	font-size: 20px;
+	color: white;
+}
+
+#d1 {
+	background-color: chartreuse;
+	width: 2cm;
+	height: 2cm;
+}
+
+#d2 {
+	background-color: #eee;
+	width: 10em;
+	height: 3em;
+}
+
+#d3 {
+	background-color: rgba(222,12,12, .2);
+	width: 40em;
+	height: 20em;
+}
+
+
+p {
+	font-size: 20px;
+	font-variant: small-caps;
+	font-weight: bold;
+	white-space: pre;
+	vertical-align: middle;
+	text-align: center;
+	line-height: 50px;
+	word-spacing: inherit;
+	letter-spacing: 3px;
+	text-shadow: 1px 1px 2px black, 0 0 1em red;
+	direction: rtl;
+	text-indent: inherit;
+}
