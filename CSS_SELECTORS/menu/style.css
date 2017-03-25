@@ -1,0 +1,198 @@
+body {
+	color: #78829d;
+	font-family: Tahoma;
+	font-size: 12px;
+}
+
+
+li {
+	padding-left: 22px;
+	height: 38px;
+	margin-left: -40px;
+	line-height: 38px;
+	text-indent: 22px;
+	list-style-type: none;
+}
+
+span {
+	opacity: .4;
+}
+
+.wrap {
+	width: 200px;
+	height: 900px;
+	background-color: #19202e;
+}
+
+.place {
+	width: 200px;
+	height: 120px;
+	border-bottom: 1px solid #1f2637;
+	background-color: #1f2637;
+}
+
+.button {
+	top: 45px;
+	left: 30px;
+	position: absolute;
+	margin: 0 auto;
+	width: 160px;
+	height: 44px;
+	text-transform: uppercase;
+	text-align: center;
+	line-height: 44px;
+	border-radius: 5px;
+	background-color: #f2795a;
+	font-weight: bold;
+	color: #fff;
+}
+
+.button::before {
+	content: '';
+	position: absolute;
+	display: block;
+	background: url(images/plus-16.png) no-repeat;
+	top: 14px;
+	width: 32px;
+	height: 32px;
+	margin-left: 15px;
+}
+
+.icon {
+	width: 160px;
+	position: relative;
+}
+
+.menu li::before {
+	opacity: 0.4;
+	content: '';
+	position: absolute;
+	display: block;
+	top: 12px;
+	width: 32px;
+	height: 32px;
+	margin-left: -5px;
+}
+
+#now-reading::before {
+	background: url("images/book-16.png") no-repeat;
+
+}
+
+#browse::before {
+	background: url("images/globe-16.png") no-repeat;
+}
+
+#buy-books::before {
+	background: url("images/buy-16.png") no-repeat;
+}
+
+#favourite-books::before {
+	background: url("images/star-8-16.png") no-repeat;
+}
+
+#wishlist::before {
+	background: url("images/list-2-16.png") no-repeat;
+}
+
+#history::before {
+	background: url("images/time-2-16.png") no-repeat;
+}
+
+
+.coloredpoint {
+	position: relative;
+}
+
+
+.offers li::before  {
+	content: '';
+	position: absolute;
+	display: block;
+	top: 15px;
+	width: .4rem;
+	height: .4rem;
+	border-radius: 50%;	
+}
+
+#must::before {
+	background: #e64c66;
+}
+
+#best::before {
+	background: #ffab00;
+}
+
+#classic::before {
+	background: #00bfdd;
+}
+
+#non::before {
+	background: #7874cf;
+}
+
+.menu {
+	background-color: #1f2637;
+	width: 160px;
+	height: 240px;
+	border-top: 1px solid #282f41;
+	border-bottom: 1px solid #1f2637;
+}
+
+.offers {
+	padding-top: 10px;
+	background-color: #1f2637;
+	width: 160px;
+	height: 170px;
+	border-top: 1px solid #282f41;
+	border-bottom: 1px solid #1f2637;
+}
+
+.lastact {
+	border-top: 1px solid #282f41;
+	border-bottom: 1px solid #1f2637;
+	padding-top: 20px;
+	height: 330px;
+	width: 160px;
+}
+
+.lastact li{
+	margin-bottom: 40px;
+	line-height: normal;
+	width: 150px;
+	height: 60px;
+}
+
+#iconhistory{
+	width: 0px;
+	height: 0px;
+}
+
+#iconhistory::before {
+	background: url("images/time-2-16.png") no-repeat;
+	opacity: 0.3;
+	top: 0;
+}
+
+li:hover {
+	cursor: pointer;
+	background-color: #15a4fa;
+	color: white;
+}
+
+.lastact .icon {
+	width: 140px;
+}
+
+.button:hover {
+	cursor: pointer;
+}
+
+#now-reading:hover::before,
+#browse:hover::before,
+#buy-books:hover::before ,
+#favourite-books:hover::before,
+#wishlist:hover::before,
+#history:hover::before {
+	opacity: 1;
+}
