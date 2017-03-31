@@ -5,14 +5,17 @@
 	margin: 0;
 	font-family: 'Open Sans', sans-serif;
 	font-size: 16px;
-	color: #6d6e71;
 }
 
 /************** DEFSTYLES ***************/
 
 a {
-	color: #000;
+	color: #6d6e71;
 	text-decoration: none;
+}
+
+a:hover {
+	color: #1faae2;
 }
 
 ul {
@@ -180,10 +183,26 @@ ul li {
 }
 
 .menu__item {
+	position: relative;
 	line-height: 86px;
 	display: inline-block;
 	height: 86px;
 	padding: 0 20px 0 0;
+}
+
+.menu__item:after {
+	position: absolute;
+	content: '';
+	bottom: 0px;
+	left: calc(50% - 40px);
+	border-bottom: 12px solid #1faae2;
+	border-left: 30px solid transparent;
+	border-right: 30px solid transparent;
+	visibility: hidden;
+}
+
+.menu__item:hover:after {
+	visibility: visible;
 }
 
 .menu__item:not(:last-child) {
