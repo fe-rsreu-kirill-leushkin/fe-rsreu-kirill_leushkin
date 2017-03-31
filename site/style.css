@@ -5,6 +5,7 @@
 	margin: 0;
 	font-family: 'Open Sans', sans-serif;
 	font-size: 16px;
+	color: #6d6e71;
 }
 
 /************** DEFSTYLES ***************/
@@ -20,8 +21,14 @@ ul {
 }
 
 ul li {
+	font-weight: bold;
 	list-style: none;
 }
+
+.like-icon span {
+	float: right;
+}
+
 
 
 /************** HEADER ***************/
@@ -190,6 +197,7 @@ ul li {
 
 .main__content-image {
 	width: 100%;
+	height: 900px;
 	background: url("images/background.jpg") no-repeat;
 	background-size: cover;
 }
@@ -203,8 +211,171 @@ ul li {
 
 .main__content-slider {
 	float: right;
-	margin-top: -31vh;
-	width: 20vw;
-	height: 20vh;
+	margin-top: -407px;
+	width: 750px;
+	height: 240px;
 	background-color: rgba(255,0,0, .3);
+}
+
+.slider-el {
+	float: left;
+	width: 40%;
+	height: 100%;
+}
+
+.slider-button {
+	position: relative;
+	background-color: #f4f4f4;
+	float: right;
+	width: 20%;
+	height: 100%;
+}
+
+.slider-left {
+	background: url("images/green.jpg") no-repeat;
+	background-size: cover;
+}
+
+.slider-right {
+	background: url("images/yellow.jpg") no-repeat;
+	background-size: cover;
+}
+
+.slider-button:hover {
+	cursor: pointer;
+}
+
+.slider-like {
+	position: relative;
+	background-color: rgba(255,255,255, .3);
+	margin-top: 55%;
+	width: 100%;
+}
+
+.like-icon {
+	color: white;
+	width: calc(10% + 50px);
+	height: 75px;
+	margin: 0 auto;
+	line-height: 75px;
+}
+
+.like-icon > span:before {
+	content: '';
+	position: absolute;
+	display: block;
+	background: url("images/favorite-3-32.png") no-repeat;
+	left: 120px;
+	top: 23px;
+	width: 32px;
+	height: 32px;
+}
+.slider-button:before {
+	content: '';
+	opacity: .3;
+	position: absolute;
+	display: block;
+	background: url("images/arrow-30-32.png") no-repeat;
+	left: 66px;
+	top: 100px;
+	width: 32px;
+	height: 32px;
+}
+
+
+
+/**************  content  ***************/
+
+
+.main__content-info {
+	width: 100%;
+	min-height: 400px;
+	margin-bottom: 30px;
+}
+
+.content-text {
+	position: relative;
+	width: 400px;
+	height: 100%;
+	padding: 20px 40px 40px 130px;
+}
+
+.content-left {
+	float: left;
+}
+
+.content-right {
+	float: right;
+}
+
+.content-left:before {
+	content: '';
+	position: absolute;
+	display: block;
+	background: url("images/icon_lamp.PNG") no-repeat;
+	left: 0;
+	width: 130px;
+	height: 130px;
+}
+
+.content-right:before {
+	content: '';
+	position: absolute;
+	display: block;
+	background: url("images/icon_tree.PNG") no-repeat;
+	left: 0;
+	width: 130px;
+	height: 130px;
+}
+
+.main__content-title {
+	padding-top: 25vh;
+	text-align: center;
+	width: 700px;
+	margin: 0 auto;
+	position: relative;
+}
+
+.strong {
+	letter-spacing: 2px;
+	font-weight: bold;
+	color: white;
+	text-transform: uppercase;
+	font-size: 50px
+}
+
+.light {
+	letter-spacing: 3px;
+	padding-left: 140px;
+	font-size: 30px;
+	font-weight: lighter;
+	color: white;
+	font-family: "Microsoft JhengHei UI Light";
+}
+
+.light:before {
+	content: '&';
+	position: absolute;
+	display: block;
+	left: 3.5vw;
+	top: 25vh;
+	font-size: 100px;
+	color: blue;
+	font-weight: 900;
+	opacity: .2;
+}
+
+.content-text > p {
+	font-weight: bold;
+	font-size: 25px;
+	padding-bottom: 10px;
+}
+
+.like-icon > span {
+	color: white;
+}
+
+.footer {
+	width: 100%;
+	height: 60px;
 }
