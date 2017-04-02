@@ -59,7 +59,7 @@ span {
 }
 
 .icon {
-	width: 160px;
+	width: 100%;
 	position: relative;
 }
 
@@ -76,27 +76,32 @@ span {
 
 #now-reading::before {
 	background: url("images/book-16.png") no-repeat;
-
+	top: 12px;
 }
 
 #browse::before {
 	background: url("images/globe-16.png") no-repeat;
+	top: 50px;
 }
 
 #buy-books::before {
 	background: url("images/buy-16.png") no-repeat;
+	top: 88px;
 }
 
 #favourite-books::before {
 	background: url("images/star-8-16.png") no-repeat;
+	top: 126px;
 }
 
 #wishlist::before {
 	background: url("images/list-2-16.png") no-repeat;
+	top: 164px;
 }
 
 #history::before {
 	background: url("images/time-2-16.png") no-repeat;
+	top: 203px;
 }
 
 
@@ -117,18 +122,22 @@ span {
 
 #must::before {
 	background: #e64c66;
+	top: 27px;
 }
 
 #best::before {
 	background: #ffab00;
+	top: 65px;
 }
 
 #classic::before {
 	background: #00bfdd;
+	top: 102px;
 }
 
 #non::before {
 	background: #7874cf;
+	top: 141px;
 }
 
 .menu {
@@ -156,25 +165,32 @@ span {
 	width: 160px;
 }
 
-.lastact li{
+.lastact li {
 	margin-bottom: 40px;
 	line-height: normal;
 	width: 150px;
 	height: 60px;
+	text-align: left;
 }
 
 #iconhistory{
-	width: 0px;
-	height: 0px;
+	width: 100%;
+	height: 60px;
 }
 
-#iconhistory::before {
+#iconhistory:before {
+	content: '';
+	display: table;
+	position: absolute;
 	background: url("images/time-2-16.png") no-repeat;
+	width: 16px;
+	height: 16px;
+	top: 22px;
+	left: 18px;
 	opacity: 0.3;
-	top: 0;
 }
 
-li:hover {
+li:hover:not(#iconhistory) {
 	cursor: pointer;
 	background-color: #15a4fa;
 	color: white;
@@ -195,4 +211,12 @@ li:hover {
 #wishlist:hover::before,
 #history:hover::before {
 	opacity: 1;
+}
+
+.menu_history {
+	padding-left: 20px;
+	text-align: left;
+	text-indent: 0;
+	width: 150px;
+	height: 80px;
 }
