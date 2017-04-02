@@ -4,18 +4,31 @@
 	<meta charset="UTF-8">
 	<title>Document</title>
 	<link rel="stylesheet" href="style.css">
+	<link rel="stylesheet" href="preloader.css">
 </head>
 <body>
+
+	<div id=page-preloader class="preloader">
+		<div class="animation">
+			<div id="circle1" class="circle"></div>
+			<div id="circle2" class="circle"></div>
+			<div id="circle3" class="circle"></div>
+			<div id="circle4" class="circle"></div>
+			<div id="circle5" class="circle"></div>
+		</div>
+	</div>
+
 	<div class="wrapper">
 		<div class="header">
 			<div class="content">
+				<div class="menu__small-icon"></div>
 				<div class="logo">
-					<div class="anim"> ?</div>
+					<div class="anim"></div>
 				</div>
 				<div class="contact">
-					<div id="logo1" class="logopic"></div>
-					<div id="logo2" class="logopic"></div>
-					<div id="logo3" class="logopic"></div>
+					<div id="logo1" class="logopic" data-title="88005553535"></div>
+					<div id="logo2" class="logopic" data-title="Paris. France."></div>
+					<div id="logo3" class="logopic" data-title="mail@mail.ru"></div>
 				</div>
 			</div>
 		</div>
@@ -26,7 +39,7 @@
 						<li class="menu__item">
 							<a href="#" class="menu__link">
 								<span class="menu__link-text">
-									home
+									HOME
 								</span>
 							</a>
 						</li>
@@ -93,9 +106,7 @@
 							</div>
 						</div>
 					</div>
-					<div class="slider-button">
-						???
-					</div>
+					<div class="slider-button"></div>
 				</div>
 				<div class="main__content-info">
 					<div class="content-left content-text">
@@ -114,8 +125,27 @@
 			</div>
 		</div>
 	</div>
-	<footer class="footer clearfix">
+	<footer class="footer">
+		<div class="footer-content">
 		
+			<div class="footer-info">
+				<div class="blog footer-item"><span>Blog</span></div>
+				<div class="jobs footer-item"><span>Jobs</span></div>
+				<div class="support footer-item"><span>Support</span></div>
+				<div class="language footer-item"><span>Arabic</span></div>
+			</div>
+		
+			<div class="footer-socials">
+				<div id="sociallogo1" class="socials"></div>
+				<div id="sociallogo2" class="socials"></div>
+				<div id="sociallogo3" class="socials"></div>
+				<div id="sociallogo4" class="socials"></div>
+			</div>
+		</div>
 	</footer>
+	
+	
+	<script src="script.js"></script>
+	
 </body>
 </html>

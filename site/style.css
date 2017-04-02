@@ -5,14 +5,17 @@
 	margin: 0;
 	font-family: 'Open Sans', sans-serif;
 	font-size: 16px;
-	color: #6d6e71;
 }
 
 /************** DEFSTYLES ***************/
 
 a {
-	color: #000;
+	color: #6d6e71;
 	text-decoration: none;
+}
+
+a:hover {
+	color: #1faae2;
 }
 
 ul {
@@ -30,11 +33,17 @@ ul li {
 }
 
 
+.wrapper {
+	min-height: 600px;
+	width: 100%;
+}
 
 /************** HEADER ***************/
 
 .header {
+	margin: 0 auto;
 	width: 100%;
+	max-width: 2000px;
 	height: 200px;
 	border-bottom: 1px solid rgba(0,0,0, .2);
 }
@@ -54,15 +63,17 @@ ul li {
 	border-radius: 50%;
 	background: linear-gradient(to bottom, #eee, #aaa);
 	animation: anim 2s infinite;
+	animation-timing-function: ease-in-out;
 }
 
 .contact {
-	float: left;
 	width: 220px;
 	height: 35px;
+	padding-top: 70px;
+	float: right;
 }
 
-@keyframes an/im {
+@keyframes anim {
 	0% {
 		border-radius: 0;
 	}
@@ -90,33 +101,71 @@ ul li {
 }
 
 .logopic {
+	position: relative;
+	cursor: pointer;
 	box-sizing: border-box;
 	width: 70px;
 	height: 35px;
 	display: inline-block;
 }
 
+.logopic:before,
+.logopic:after {
+	display: block;
+	position: absolute;
+	opacity: 0;
+	left: 50%;
+	visibility: hidden;
+	transition: opacity .7s;
+}
+
+.logopic:before {
+	content: attr(data-title);
+	color: black;
+	height: 50px;
+	bottom: 50px;
+	width: 225px;
+	opacity: 0;
+	margin-left: -112px;
+	border-radius: 5px;
+	border: 2px solid rgba(0,0,0, .3);
+	line-height: 50px;
+	text-align: center;
+	
+}
+
+.logopic:after {
+	content: '';
+	bottom: 42px;
+	left: 25px;
+	border-top: 10px solid rgba(0,0,0, .3);
+	border-left: 10px solid transparent;
+	border-right: 10px solid transparent;
+}
+
+.logopic:hover:before, 
+.logopic:hover:after {
+	visibility: visible;
+	opacity: 1;
+}
+
 #logo1 {
-	background: url("images/phone-32.png") no-repeat center;
-	opacity: .3;
+	background: url("images/icon_phone.png") no-repeat center;
 	border-right: 2px solid rgba(0,0,0, .2);
 }
 
 #logo2 {
-	background: url("images/mail-32.png")  no-repeat center;
-	opacity: .3;
+	background: url("images/icon_geolocation.PNG")  no-repeat center;
+	opacity: .4;
 	border-right: 2px solid rgba(0,0,0, .2);
 }
 
 #logo3 {
-	background: url("images/mail-32.png")  no-repeat center;
-	opacity: .3;
+	background: url("images/icon_mail.PNG")  no-repeat center;
 }
 
 .contact {
-	padding-top: 70px;
-	float: right;
-	padding-right: 0px;
+
 }
 
 .content {
@@ -125,7 +174,7 @@ ul li {
 	padding-bottom: 55px;
 	margin: 0 auto;
 	width: 1170px;
-	height: 100px;
+	min-height: 100px;
 }
 
 /**************  MAIN  ***************/
@@ -137,11 +186,31 @@ ul li {
 	text-align: justify;
 }
 
+.menu-small {
+	display: none;
+}
+
 .menu__item {
+	position: relative;
 	line-height: 86px;
 	display: inline-block;
 	height: 86px;
 	padding: 0 20px 0 0;
+}
+
+.menu__item:after {
+	position: absolute;
+	content: '';
+	bottom: 0px;
+	left: calc(50% - 40px);
+	border-bottom: 12px solid #1faae2;
+	border-left: 30px solid transparent;
+	border-right: 30px solid transparent;
+	visibility: hidden;
+}
+
+.menu__item:hover:after {
+	visibility: visible;
 }
 
 .menu__item:not(:last-child) {
@@ -159,8 +228,7 @@ ul li {
 	padding-left: 20px;
 	width: 800px;
 	height: 86px;
-	box-sizing: border-box;
-	float: left;
+	position: absolute;
 }
 
 .search {
@@ -198,10 +266,15 @@ ul li {
 .main__content-image {
 	width: 100%;
 	height: 900px;
+	max-width: 2000px;
+	margin: 0 auto;
 	background: url("images/background.jpg") no-repeat;
 	background-size: cover;
 }
 
+.first {
+	display: none;
+}
 
 /************** SLIDER ***************/
 
@@ -375,7 +448,311 @@ ul li {
 	color: white;
 }
 
+/***************** FOOTER **************/
+
 .footer {
 	width: 100%;
 	height: 60px;
+	margin: 0 auto;
+	overflow: hidden;
+	max-width: 2000px;
+	background-color: #edeef3;
 }
+
+.footer-info {
+	width: 420px;
+	height: 60px;
+	float: left;
+}
+
+.footer-content {
+	position: relative;
+	margin: 0 auto;
+	width: 1170px;
+	max-height: 60px;
+}
+
+.footer-item {
+	float: left;
+	margin-left: 5px;
+	width: 100px;
+	height: 35px;
+	background-color: white;
+	border-radius: 5px;
+	margin-top: 13px;
+	line-height: 35px;
+	position: relative;
+	text-align: center;
+}
+
+.footer-item:hover,
+.socials:hover {
+	box-shadow: inset 1px 1px 1px 1px rgba(0,0,0,0.5);
+	padding-top: 2px;
+}
+
+.footer-item > span {
+	font-size: 12px;
+	font-weight: bold;
+	padding-left: 10px;
+}
+
+.footer-item:before {
+	content: '';
+	position: absolute;
+	left: 10px;
+	top: 8px;
+	width: 32px;
+	height: 32px;
+}
+
+.blog:before {
+	background: url(images/icon_blog.PNG) no-repeat;
+}
+
+.jobs:before {
+	background: url(images/icon_jobs.PNG) no-repeat;
+}
+
+.support:before {
+	background: url(images/icon_supp.PNG) no-repeat;
+}
+
+
+.language:before {
+	background: url(images/icon_lang.PNG) no-repeat;
+}
+
+
+.footer-socials {
+	float: right;
+	width: 264px;
+	height: 60px;
+}
+
+.socials {
+	position: relative;
+	cursor: pointer;
+	box-sizing: border-box;
+	width: 62px;
+	height: 64px;
+	display: inline-block;
+}
+
+
+#sociallogo1 {
+	background: url("images/facebook.PNG")  no-repeat center;
+	border-right: 1px solid rgba(0,0,0, .2);
+	border-left: 1px solid rgba(0,0,0, .2)
+}
+
+#sociallogo2 {
+	background: url("images/twitter.PNG")  no-repeat center;
+	border-right: 1px solid rgba(0,0,0, .2);
+}
+
+#sociallogo3 {
+	background: url("images/instagram.PNG")  no-repeat center;
+	border-right: 1px solid rgba(0,0,0, .2);
+}
+
+#sociallogo4 {
+	background: url("images/g+.PNG")  no-repeat center;
+	border-right: 1px solid rgba(0,0,0, .2);
+}
+
+@media only screen and (max-width: 768px) {
+	* {
+		font-size: 14px;
+	}
+	
+	.content {
+		margin: 0 auto;
+		width: 568px;
+		padding-top: 0px;
+		padding-bottom: 0px;
+	}
+	
+	.main__content {
+		position: relative;
+	}
+	
+	.contact,
+	.main__content-slider {
+		display: none;
+	}
+	
+	/************************ MENU ************/
+
+	
+	.menu {
+		position: absolute;
+		top: -55px;
+		height: 49px;
+		max-width: 50px;
+		overflow: hidden;
+		transition: all .3s ease-in-out;
+	}
+	
+	.menu__items {
+		position: absolute;
+	}
+	
+	.menu__item:first-child:before {
+		content: '';
+		position: absolute;
+		top: 0px;
+		display: block;
+		width: 48px;
+		height: 48px;
+		background: url("images/menu-4-48.png") no-repeat;
+	}
+	
+	.menu__item {
+		box-sizing: border-box;
+		text-align: center;
+		top: 0px;
+		padding: 0;
+		border: 0px;
+		line-height: 50px;
+		width: 250px;
+		height: 50px;
+		display: block;
+		float: none;
+		border-bottom: 1px solid rgba(0,0,0, .3);
+		background-color: white;
+		z-index: 2;
+		transition: all .5s;
+	}
+	
+	.menu__item:hover {
+		background-color: #2fc5ff;
+	}
+	
+	.menu__item:hover:after {
+		visibility: hidden;
+	}
+	
+	.menu:hover {
+		height: 350px;
+		max-width: 250px;
+	}
+	
+	a {
+		text-transform: uppercase;
+		color: black;
+	}
+	
+	a:hover {
+		color: black;
+	}
+	
+	.menu__item:not(:last-child) {
+		border-right: 0px;
+		border-bottom: 0px;
+	}
+	
+	/***********************************/
+	
+	
+	.footer-content {
+		width: 768px;
+	}
+	
+	.header {
+		border: 0;
+		height: 64px;
+		width: 768px;
+		overflow: hidden;
+	}
+	
+	.anim {
+		width: 40px;
+		height: 40px;
+	}
+	
+	.logo {
+		margin-left: calc(50% - 40px);
+		margin-top: 10px;
+		width: 40px;
+		height: 40px;
+	}
+	
+	.wrapper {
+		height: 1000px;
+		width: 768px;
+	}
+	
+	.main__content-image {
+		max-height: 500px;
+		max-width: 768px;
+		margin: 0 auto;
+	}
+	
+	.main__content-menu {
+		position: absolute;
+		height: 0px;
+		width: 768px;
+	}
+	
+	.search {
+		top: -75px;
+		left: -50px;
+	}
+	
+	.content-left,
+	.content-right {
+		float: none;
+	}
+	
+	.footer {
+		height: 64px;
+		overflow: hidden;
+		width: 768px;
+		height: 128px;
+		background-color: #edeef3;
+	}
+	
+	.footer-content {
+		position: relative;
+		width: 768px;
+		border: 0;
+	}
+	
+	.content-text {
+		position: relative;
+		width: 570px;
+		height: 100%;
+		padding: 20px 40px 40px 28px;
+	}
+	
+	.menu__items {
+		width: 768px;
+	}
+	
+	#sociallogo1,
+	#sociallogo2,
+	#sociallogo3,
+	#sociallogo4 {
+		border: 0;
+	}
+	
+	.content-left:before,
+	.content-right:before {
+		top: 25px;
+		left: -85px;
+	}
+	
+		
+	.footer-info {
+		float: none;
+		margin: 0 auto;
+	}
+	
+	.footer-socials {
+		float: none;
+		margin: 0 auto;
+	}
+	
+}
+
