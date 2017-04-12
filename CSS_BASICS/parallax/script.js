@@ -10,9 +10,6 @@ function parallax () {
 		image = document.getElementById('image' + i);
 		image.style.top = (-1) * y * i * 0.01 + 'px';
 		image.style.left = (-1) * x * i * 0.01 + 'px';
-		
-		image.style.transform = 'translateY(' + (-1) * y * i * 0.001 + 'px)';
-		image.style.transform = 'translateX(' + (-1) * x * i * 0.001 + 'px)';
 	}
 	image = document.getElementById('image');
 }
