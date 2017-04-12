@@ -1,8 +1,6 @@
 var y, image;
 
 function parallax () {
-	console.log(document.documentElement.clientHeight);
-	
 	y = (event.clientY - document.documentElement.clientHeight) / 2 ;
 	x = (event.clientX - document.documentElement.clientHeight) / 2;
 	
