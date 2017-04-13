@@ -1,12 +1,18 @@
 (function () {
 	'use strict';
 	
+	function isNumber(n) {
+		return !isNaN(parseFloat(n)) && isFinite(n);
+	}
+	
 	function showVariables(a, b) {
 		console.log(a, b);
 	}
 
 	function trangleArea(bottom, height) {
-		if (bottom < 0 || height < 0) {
+		if (isNumber(bottom) || isNumber(height)) return 0;
+		
+		if ( bottom < 0 || height < 0 ) {
 			return 0;
 		}
 		
@@ -21,6 +27,10 @@
 		
 		if (!Array.isArray(array)) {
 			return 0;
+		}
+		
+		for (var i = 0; i < array.length; i++) {
+			if (isNumber( array[i] )) return console.log('each element of array should be a value');
 		}
 		
 		for (i, j; i < j; i++, j--) {
@@ -39,6 +49,10 @@
 		
 		if (!Array.isArray(array)) {
 			return 0;
+		}
+		
+		for (var i = 0; i < array.length; i++) {
+			if (isNumber( array[i] )) return console.log('each element of array should be a value');
 		}
 
 		do {
@@ -65,6 +79,10 @@
 		if (!Array.isArray(array)) {
 			return 0;
 		}
+		
+		for (var i = 0; i < array.length; i++) {
+			if (isNumber( array[i] )) return console.log('each element of array should be a value');
+		}
 
 		while ( i < j ) {
 			temp = array[j];
@@ -81,9 +99,7 @@
 	function differenceIncDec(i) {
 		var temp = i;
 		
-		if (typeof i != 'number') {
-			return 0;
-		}
+		if (isNumber( i )) return 0;
 		
 		window.console.log('your variable: ' + i);
 		window.console.log('variable i after increment: ' + (i++) + '??? the same ???');
@@ -92,19 +108,15 @@
 
 	}
 
-	function isPosNeg() {
-		if (typeof arguments[0] != 'number') {
-			return 0;
-		}
+	function isPosNeg( i ) {
 		
-		for (var i = 0; i < arguments.length; i++) {
+		if (isNumber( i )) return 0;
+		
+		if (i < 0) window.console.log(' negative value');
 
-			if (arguments[i] < 0) window.console.log('argument[' + i + '] is negative value');
-			
-			else if (arguments[i] > 0) window.console.log('argument[' + i + '] is positive value');
-			
-			else window.console.log('argument[' + i + '] is equal 0');
-		}
+		else if (i > 0) window.console.log(' positive value');
+
+		else window.console.log(' equal 0');
 		
 		return 1;
 	}
@@ -115,9 +127,7 @@
 	}
 
 	function factorial( value ) {
-		if (typeof value != 'number') {
-			return 0;
-		}
+		if (isNumber( value )) return 0;
 		
 		return (value !== 1) ? value * factorial( value - 1 ) : 1;
 	}
