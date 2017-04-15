@@ -10,11 +10,9 @@
 	}
 
 	function trangleArea(bottom, height) {
-		if (isNumber(bottom) || isNumber(height)) return 0;
+		if (isNumber(bottom) || isNumber(height)) return console.log('parametr(s) should be a number');
 		
-		if ( bottom < 0 || height < 0 ) {
-			return 0;
-		}
+		if ( bottom < 0 || height < 0 ) return console.log('parametr(s) should be a positive number');
 		
 		return 0.5 * (bottom * height);
 	}
@@ -48,7 +46,7 @@
 		
 		
 		if (!Array.isArray(array)) {
-			return 0;
+			return console.log('parametr(s) should be an array');
 		}
 		
 		for (var i = 0; i < array.length; i++) {
@@ -77,7 +75,7 @@
 		
 		
 		if (!Array.isArray(array)) {
-			return 0;
+			return console.log('parametr(s) should be an array');
 		}
 		
 		for (var i = 0; i < array.length; i++) {
@@ -99,7 +97,7 @@
 	function differenceIncDec(i) {
 		var temp = i;
 		
-		if (isNumber( i )) return 0;
+		if (isNumber( i )) return console.log('parametr(s) should be a number');
 		
 		window.console.log('your variable: ' + i);
 		window.console.log('variable i after increment: ' + (i++) + '??? the same ???');
