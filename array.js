@@ -124,7 +124,7 @@
 		
 		for (var i = 0; i < array.length; i++) {
 			for (var j = 0; (j < array.length) && (i != j); j++) {
-				if (array[i].toUpperCase() === array[j].toUpperCase()) {
+				if (array[i] === array[j]) {
 					array.splice(i,1);
 					array.splice(j,1);
 				}

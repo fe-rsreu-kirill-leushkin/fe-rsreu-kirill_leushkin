@@ -31,7 +31,7 @@
 	//4. Write a function which calculates a factorial for a given number
 	//(use recursion in your algorithm). Do not forget to check if the given value is a number.
 	function factorial(value) {
-		if (!isNumber(value) || isPositive(value)) {
+		if (!isNumber(value) && !isPositive(value)) {
 			throw new Error('parametr(s) should be a number');
 		}
 			
@@ -45,9 +45,11 @@
 			throw new Error('parametr(s) should be a number');
 		}
 		
+		for (var j = 2; j < value; j++) {
+			if (value % j == 0) return false;
+		}
 		
-		
-		return Math.ceil(value) === value;
+		return true;
 	}
 	
 	console.log(isNumber('javascript'));
@@ -57,6 +59,6 @@
 	console.log(isPositive(2));
 	console.log(isPositive(-2));
 	console.log(factorial(3));
-	console.log(isPrime(20.2));
+	console.log(isPrime(7));
 	console.log(isPrime(10));
 })();
