@@ -1,39 +1,59 @@
-(function(){
+(function (){
 	'use strict';
 	
+	//1. Write a function which defines if a given value is a number. 
+	//Use this function in the next tasks to define if a given value 
+	//is a number;
 	function isNumber(n) {
 		return !isNaN(parseFloat(n)) && isFinite(n);
 	}
 	
-	function isNegative ( value ) {
-		if (!isNumber) return console.log('parametr(s) should be a number');
+	//2. Write a function which defines if a given number is negative 
+	//or not. Do not forget to check if the given value is a number.
+	function isNegative(value) {
+		if (!isNumber(value)) {
+			throw new Error('parametr(s) should be a number');
+		}
 		
-		return (value < 0) ? true : false;
+		return value < 0;
+	}	
+	
+	//3. Write a function which defines if a given number is positive or not.
+	//Do not forget to check if the given value is a number.
+	function isPositive(value) {
+		if (!isNumber(value)) {
+			throw new Error('parametr(s) should be a number');
+		}
+		
+		return value > 0;
 	}
 	
-	function isPositive ( value ) {
-		if (!isNumber) return console.log('parametr(s) should be a number');
-		
-		return (value < 0) ? false : true;
-	}
-	
-	function factorial( value ) {
-		if (!isNumber) return console.log('parametr(s) should be a number');
+	//4. Write a function which calculates a factorial for a given number
+	//(use recursion in your algorithm). Do not forget to check if the given value is a number.
+	function factorial(value) {
+		if (!isNumber(value)) {
+			throw new Error('parametr(s) should be a number');
+		}
 			
 		return (value !== 1) ? value * factorial( value - 1 ) : 1;
 	}
 	
-	function isPrime ( value ) {
-		if (!isNumber) return console.log('parametr(s) should be a number');
+	//5. Write a function which returns if the number is prime or not. 
+	//Do not forget to check if the given value is a number.
+	function isPrime(value) {
+		if (!isNumber(value)) {
+			throw new Error('parametr(s) should be a number');
+		}
 		
-		if (Math.ceil( value ) == value) return true;
-		else return false;
+		return Math.ceil( value ) == value
 	}
 	
-	console.log(isNumber("javascript"));
+	console.log(isNumber('javascript'));
 	console.log(isNumber(5));
 	console.log(isNegative(2));
 	console.log(isNegative(-2));
+	console.log(isPositive(2));
+	console.log(isPositive(-2));
 	console.log(factorial(3));
 	console.log(isPrime(20.2));
 	console.log(isPrime(10));
