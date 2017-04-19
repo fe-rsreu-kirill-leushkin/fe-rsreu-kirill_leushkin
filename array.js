@@ -20,11 +20,12 @@
 	//2. Write a JavaScript function to remove. 'null', '0', '""', 'false',
 	//'undefined' and 'NaN' values from an array
 	function remover(array) {
-		if (!isArray(array)) throw new Error('parameter(s) should be an array');
+		if (!isArray(array)) {
+			throw new Error('parameter(s) should be an array');
+		}
 		
 		for (var i = 0; i < array.length; i++) {
-			
-			if ( !array[i] ) {	
+			if (!array[i]) {	
 				array[i] = 'unexpected value';		
 			}
 		}
@@ -34,7 +35,9 @@
 	
 	//3. Write a JavaScript function to find the highest value in an array
 	function max(array) {
-		if (!isArray(array)) throw new Error('parameter(s) should be an array');
+		if (!isArray(array)) {
+			throw new Error('parameter(s) should be an array');
+		}
 		
 		var max = array[0];
 		
@@ -49,7 +52,9 @@
 	
 	//4. Write a JavaScript function to find the lowest value in an array
 	function min(array) {
-		if (!isArray(array)) throw new Error('parameter(s) should be an array');
+		if (!isArray(array)) {
+			throw new Error('parameter(s) should be an array');
+		}
 		
 		var min = array[0];
 		
@@ -64,7 +69,9 @@
 	
 	//5. Write a JavaScript function to split a string and convert it into an array of words;
 	function convert(string) {
-		if (!isString(string)) throw new Error('parameter(s) should be a string');
+		if (!isString(string)) {
+			throw new Error('parameter(s) should be a string');
+		}
 		
 		return string.split(' ');
 	}
@@ -72,7 +79,9 @@
 	
 	//6. Write a JavaScript function to find the most frequent item of an array.
 	function mostFreq(array) {
-		if (!isArray(array)) throw new Error('parameter(s) should be an array');
+		if (!isArray(array)) {
+			throw new Error('parameter(s) should be an array');
+		}
 		
 		var count = 0;
 		var max = 0;
@@ -85,6 +94,7 @@
 				}
 				
 			}
+			
 			if (max < count) {
 				max = count;
 				output = array[i];
@@ -98,7 +108,9 @@
 	
 	//
 	function cloneArray(array) {
-		if (!isArray(array)) throw new Error('parameter(s) should be an array');
+		if (!isArray(array)) {
+			throw new Error('parameter(s) should be an array');
+		}
 		
 		return array.slice();
 	}
@@ -106,12 +118,15 @@
 	// 8. Write a JavaScript program to remove duplicate strings from a string array
 	//(ignore case sensitivity)
 	function removeDuplicate(array) {
-		if (!isArray(array)) throw new Error('parameter(s) should be an array');
+		if (!isArray(array)) {
+			throw new Error('parameter(s) should be an array');
+		}
 		
 		for (var i = 0; i < array.length; i++) {
 			for (var j = 0; (j < array.length) && (i != j); j++) {
 				if (array[i].toUpperCase() === array[j].toUpperCase()) {
-					array[i] = array[j] = '';
+					array.splice(i,1);
+					array.splice(j,1);
 				}
 			}
 		}
@@ -122,9 +137,11 @@
 	// 9. Write a JavaScript function to merge two arrays and 
 	//removes all duplicates elements
 	function mergeArrays(arr1, arr2) {
-		if (!isArray(arr1) || !isArray(arr2)) throw new Error('parameter(s) should be an array');
+		if (!isArray(arr1) || !isArray(arr2)) {
+			throw new Error('parameter(s) should be an array');
+		}
 		
-		return arr1.concat(arr2);
+		return removeDuplicate(arr1.concat(arr2));
 	}
 	
 	
@@ -134,8 +151,9 @@
 	
 	// completely remove
 	function removeSpec(array, key) {
-		if (!isArray(array) || !isString(key)) throw new Error('parameter(s) should be an array');
-		
+		if (!isArray(array) || !isString(key)) {
+			throw new Error('parameter(s) should be an array');
+		}
 		
 		while (array.indexOf(key) + 1) {
 			array.splice(array.indexOf(key), 1);
@@ -154,7 +172,9 @@
 	//11. Write a JavaScript function to sort the following array of objects by title 
 	//value using ‘sort’ method
 	function sort(array) {
-		if (!isArray(array)) throw new Error('parameter(s) should be an array');
+		if (!isArray(array)) {
+			throw new Error('parameter(s) should be an array');
+		}
 		
 		return array.sort((obj1, obj2) => obj1.title.charCodeAt(0) - obj2.title.charCodeAt(0));
 	}

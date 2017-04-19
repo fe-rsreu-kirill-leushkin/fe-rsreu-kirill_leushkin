@@ -1,4 +1,4 @@
-(function (){
+(function () {
 	'use strict';
 	
 	//1. Write a function which defines if a given value is a number. 
@@ -16,7 +16,7 @@
 		}
 		
 		return value < 0;
-	}	
+	}
 	
 	//3. Write a function which defines if a given number is positive or not.
 	//Do not forget to check if the given value is a number.
@@ -31,11 +31,11 @@
 	//4. Write a function which calculates a factorial for a given number
 	//(use recursion in your algorithm). Do not forget to check if the given value is a number.
 	function factorial(value) {
-		if (!isNumber(value)) {
+		if (!isNumber(value) || isPositive(value)) {
 			throw new Error('parametr(s) should be a number');
 		}
 			
-		return (value !== 1) ? value * factorial( value - 1 ) : 1;
+		return (value !== 0) ? value * factorial(value - 1) : 1;
 	}
 	
 	//5. Write a function which returns if the number is prime or not. 
@@ -45,7 +45,9 @@
 			throw new Error('parametr(s) should be a number');
 		}
 		
-		return Math.ceil( value ) == value
+		
+		
+		return Math.ceil(value) === value;
 	}
 	
 	console.log(isNumber('javascript'));

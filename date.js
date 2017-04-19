@@ -8,10 +8,9 @@
 	
 	//2. Write a JavaScript function gets the current date.
 	function currentDate() {
-		return Date();
+		return new Date();
 	}
-	
-	
+		
 	//3. Write a JavaScript function which displays the current day and time 
 	//in the following format. Apr 18 2017, 21:10
 	function formatDate(date) {

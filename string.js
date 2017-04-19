@@ -1,4 +1,4 @@
-(function(){
+(function () {
 	'use strict';
 	
 	//1. Write a function which defines if a given value is a string. 
@@ -10,15 +10,19 @@
 	
 	//2. Write a function which defines if a given value can be casted to a number;
 	function canParseToNumber(char) {
-		if (!isString(char)) throw new Error('parameter(s) should be a string');
+		if (!isString(char)) {
+			throw new Error('parameter(s) should be a string');
+		}
 		
-		return !isNaN(parseFloat(char)) && isFinite(char)
+		return !isNaN(parseFloat(char)) && isFinite(char);
 	}
 	
 	//3. Write a function which returns a given string length. Do not 
 	//forget to check if the given value is a string;
 	function stringLenght(string) {
-		if (!isString(string)) throw new Error('parameter(s) should be a string');
+		if (!isString(string)) {
+			throw new Error('parameter(s) should be a string');
+		}
 		
 		return string.length;
 	}
@@ -28,7 +32,9 @@
 	
 	// using string built-in methods
 	function camelize(string) {
-		if (!isString(string)) throw new Error('parameter(s) should be a string');
+		if (!isString(string)) {
+			throw new Error('parameter(s) should be a string');
+		}
 		
 		var output = '';
 		var i = 0;
@@ -36,7 +42,7 @@
 		
 		var sliceIndex = function (i) {
 			return string.slice(i, string.length).indexOf(' ');
-		}
+		};
 		
 		while (sliceIndex(i) + 1) {
 			output = output + string[i].toUpperCase() + string.slice(i + 1, i + sliceIndex(i));
@@ -50,16 +56,20 @@
 	
 	//
 	function capitalize(string) {
-		if (!isString(string)) throw new Error('parameter(s) should be a string');
+		if (!isString(string)) {
+			throw new Error('parameter(s) should be a string');
+		}
 		
-		return string[0].toUpperCase() + string.slice(1,string.length);
+		return string[0].toUpperCase() + string.slice(1, string.length);
 	}
 	
 	
 	//6. Write a JavaScript function which return the number of occurrences of a given substring 
 	//in a string.
 	function findOccurrences(key, string) {
-		if (!isString(key) || !isString(string)) throw new Error('parameter(s) should be a string');
+		if (!isString(key) || !isString(string)) {
+			throw new Error('parameter(s) should be a string');
+		}
 		
 		var count = 0;
 		var lastindex = -1;
@@ -85,4 +95,3 @@
 	console.log(capitalize('javaScript'));
 	console.log(findOccurrences('b','javascript'));
 })();
-
