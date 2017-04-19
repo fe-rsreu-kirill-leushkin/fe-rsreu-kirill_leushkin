@@ -10,9 +10,11 @@
 	}
 
 	function trangleArea(bottom, height) {
-		if (isNumber(bottom) || isNumber(height)) throw new Error('each element of array should be a value');
+		if (isNumber(bottom) || isNumber(height)) {
+			throw new Error('each element of array should be a value');
+		}
 		
-		if ( bottom < 0 || height < 0 ) {
+		if (bottom < 0 || height < 0) {
 			throw new Error('each element of array should be a positive number');
 		}
 		
@@ -24,13 +26,14 @@
 		var j = array.length - 1;
 		var temp;
 		
-		
 		if (!Array.isArray(array)) {
 			throw new Error('each element of array should be an array');
 		}
 		
 		for (var i = 0; i < array.length; i++) {
-			if (isNumber( array[i] )) throw new Error('each element of array should be a value');
+			if (isNumber(array[i])) {
+				throw new Error('each element of array should be a value');
+			}
 		}
 		
 		for (i, j; i < j; i++, j--) {
@@ -38,6 +41,7 @@
 			array[j] = array[i];
 			array[i] = temp;
 		}
+		
 		return array;
 	}
 
@@ -52,7 +56,9 @@
 		}
 		
 		for (var i = 0; i < array.length; i++) {
-			if (isNumber( array[i] )) throw new Error('each element of array should be a value');
+			if (isNumber( array[i] )) {
+				throw new Error('each element of array should be a value');
+			}
 		}
 
 		do {
@@ -81,7 +87,9 @@
 		}
 		
 		for (var i = 0; i < array.length; i++) {
-			if (isNumber( array[i] )) throw new Error('each element of array should be a value');
+			if (isNumber( array[i] )) {
+				throw new Error('each element of array should be a value');
+			}
 		}
 
 		while ( i < j ) {
@@ -99,7 +107,9 @@
 	function differenceIncDec(i) {
 		var temp = i;
 		
-		if (isNumber( i )) throw new Error('each element of array should be a value');
+		if (!isNumber(i)) {
+			throw new Error('each element of array should be a value');
+		}
 		
 		window.console.log('your variable: ' + i);
 		window.console.log('variable i after increment: ' + (i++) + '??? the same ???');
@@ -108,17 +118,21 @@
 
 	}
 
-	function isPosNeg( i ) {
+	function isPosNeg(i) {
 		
-		if (isNumber( i )) return 0;
+		if (!isNumber(i)) {
+			throw new Error('each element of array should be a value');
+		}
 		
-		if (i < 0) window.console.log(' negative value');
-
-		else if (i > 0) window.console.log(' positive value');
-
-		else window.console.log(' equal 0');
+		if (i < 0) {
+			window.console.log(' negative value');
+		} else if (i > 0) {
+			window.console.log(' positive value');
+		} else {
+			window.console.log(' equal 0');
+		}
 		
-		return 1;
+		return true;
 	}
 
 	function askName() {
@@ -126,13 +140,16 @@
 		alert('hello ' + name);
 	}
 
-	function factorial( value ) {
-		if (isNumber( value )) return 0;
+	function factorial(value)  {
+		if (!isNumber(value) && (value < 0)) {
+			throw new Error('each element of array should be a positive number');
+		}
 		
-		return (value !== 1) ? value * factorial( value - 1 ) : 1;
+		return (value !== 0) ? value * factorial( value - 1 ) : 1;
 	}
 	
-	var one = 1, two = 2;
+	var one = 1;
+	var two = 2;
 
 	showVariables(one, two);
 	window.console.log(trangleArea(3, 4));
