@@ -26,7 +26,7 @@
 		
 		for (var i = 0; i < array.length; i++) {
 			if (!array[i]) {	
-				array[i] = 'unexpected value';		
+				array.splice(i,1);	
 			}
 		}
 		
