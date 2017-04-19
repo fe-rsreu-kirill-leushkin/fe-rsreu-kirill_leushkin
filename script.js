@@ -27,7 +27,7 @@
 		var temp;
 		
 		if (!Array.isArray(array)) {
-			throw new Error('each element of array should be an array');
+			throw new Error('parametr(s) should be an array');
 		}
 		
 		for (var i = 0; i < array.length; i++) {
@@ -52,7 +52,7 @@
 		
 		
 		if (!Array.isArray(array)) {
-			return 0;
+			throw new Error('parametr(s) should be an array');
 		}
 		
 		for (var i = 0; i < array.length; i++) {
@@ -61,16 +61,14 @@
 			}
 		}
 
-		do {
-			
+		do {		
 			temp = array[j];
 			array[j] = array[i];
 			array[i] = temp;
 			
 			i++;
 			j--;
-			
-		} while ( i < j );
+		} while (i < j);
 
 		return array;
 	}
@@ -87,7 +85,7 @@
 		}
 		
 		for (var i = 0; i < array.length; i++) {
-			if (isNumber( array[i] )) {
+			if (isNumber(array[i])) {
 				throw new Error('each element of array should be a value');
 			}
 		}
