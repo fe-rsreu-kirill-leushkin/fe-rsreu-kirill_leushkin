@@ -7,15 +7,12 @@
 	}
 	
 	function isString( string ) {
-		if (typeof string === 'string') {
-			return true;
-		}
-		return false;
+		return typeof string === 'string';
 	}
 	
 	
 	function palindrome ( string ) {
-		if(!isString) return console.log('parametr(s) should be a string');
+		if(!isString) throw new Error('parametr(s) should be a string');
 		
 		var i = 0;
 		var j = string.length - 1;
@@ -30,7 +27,7 @@
 
 
 	function combinations ( string ) {
-		if(!isString) return console.log('parametr(s) should be a string');
+		if(!isString) throw new Error('parametr(s) should be a string');
 		
 		var output = '';
 		for (var i = 0; i < string.length; i++) {
@@ -41,10 +38,12 @@
 			}
 			output = '';
 		}
+		
+		return true;
 	}
 
 	function alphabetOrder ( string ) {
-		if(!isString) return console.log('parametr(s) should be a string');
+		if(!isString) throw new Error('parametr(s) should be a string');
 		
 
 		var size = string.length;
@@ -71,7 +70,7 @@
 	}
 
 	function longestWord ( string ) {
-		if(!isString) return console.log('parametr(s) should be a string');
+		if(!isString) throw new Error('parametr(s) should be a string');
 		
 		var temp = '';
 		var max = '';
@@ -91,7 +90,7 @@
 	}
 
 	function extractUnique ( string ) {
-		if(!isString) return console.log('parametr(s) should be a string');
+		if(!isString) throw new Error('parametr(s) should be a string');
 		
 		var size = string.length;
 		var arr = string.split('');

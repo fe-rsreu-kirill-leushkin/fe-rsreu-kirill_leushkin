@@ -6,15 +6,12 @@
 	}
 	
 	function isString( string ) {
-		if (typeof string === 'string') {
-			return true;
-		}
-		return false;
+		return typeof string === 'string';
 	}
 	
 	
 	function max(a, b) {
-		if(!isNumber) return console.log('parametr(s) should be a number');
+		if(!isNumber) throw new Error('parametr(s) should be a number');
 		
 		return (a > b) ? a : b;
 	}
@@ -25,7 +22,7 @@
 	}
 
 	function isBlank (string) {
-		if(!isString) return console.log('parametr(s) should be a string');
+		if(!isString) throw new Error('parametr(s) should be a string');
 		
 		for(var i = 0; i < string.length; i++){
 			if (string[i] != ' ') return false;
