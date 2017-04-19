@@ -10,9 +10,11 @@
 	}
 
 	function trangleArea(bottom, height) {
-		if (isNumber(bottom) || isNumber(height)) return console.log('parametr(s) should be a number');
+		if (isNumber(bottom) || isNumber(height)) throw new Error('each element of array should be a value');
 		
-		if ( bottom < 0 || height < 0 ) return console.log('parametr(s) should be a positive number');
+		if ( bottom < 0 || height < 0 ) {
+			throw new Error('each element of array should be a positive number');
+		}
 		
 		return 0.5 * (bottom * height);
 	}
@@ -24,11 +26,11 @@
 		
 		
 		if (!Array.isArray(array)) {
-			return 0;
+			throw new Error('each element of array should be an array');
 		}
 		
 		for (var i = 0; i < array.length; i++) {
-			if (isNumber( array[i] )) return console.log('each element of array should be a value');
+			if (isNumber( array[i] )) throw new Error('each element of array should be a value');
 		}
 		
 		for (i, j; i < j; i++, j--) {
@@ -46,11 +48,11 @@
 		
 		
 		if (!Array.isArray(array)) {
-			return console.log('parametr(s) should be an array');
+			return 0;
 		}
 		
 		for (var i = 0; i < array.length; i++) {
-			if (isNumber( array[i] )) return console.log('each element of array should be a value');
+			if (isNumber( array[i] )) throw new Error('each element of array should be a value');
 		}
 
 		do {
@@ -75,11 +77,11 @@
 		
 		
 		if (!Array.isArray(array)) {
-			return console.log('parametr(s) should be an array');
+			throw new Error('each element of array should be an array');
 		}
 		
 		for (var i = 0; i < array.length; i++) {
-			if (isNumber( array[i] )) return console.log('each element of array should be a value');
+			if (isNumber( array[i] )) throw new Error('each element of array should be a value');
 		}
 
 		while ( i < j ) {
@@ -97,7 +99,7 @@
 	function differenceIncDec(i) {
 		var temp = i;
 		
-		if (isNumber( i )) return console.log('parametr(s) should be a number');
+		if (isNumber( i )) throw new Error('each element of array should be a value');
 		
 		window.console.log('your variable: ' + i);
 		window.console.log('variable i after increment: ' + (i++) + '??? the same ???');
