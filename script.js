@@ -1,40 +1,69 @@
-(function(){
-	'use strict';
-	
-	function isNumber(n) {
-		return !isNaN(parseFloat(n)) && isFinite(n);
-	}
-	
-	function isString( string ) {
-		if (typeof string === 'string') {
-			return true;
-		}
-		return false;
-	}
-	
-	
-	function max(a, b) {
-		if(!isNumber) return console.log('parametr(s) should be a number');
-		
-		return (a > b) ? a : b;
-	}
+function isNumber(n) {
+	return !isNaN(parseFloat(n)) && isFinite(n);
+}
 
-	for (var i = 0; i < 9; i++){
-		if (i % 2) console.log( i + ' is odd');
-		else console.log( i + ' is even');
-	}
+var Calculator = (function () {
+  'use strict';
 
-	function isBlank (string) {
-		if(!isString) return console.log('parametr(s) should be a string');
-		
-		for(var i = 0; i < string.length; i++){
-			if (string[i] != ' ') return false;
-		}
-		return true;
-	}
+  var result = 0;
 
-	max(10, -10);
-	console.log(isBlank(''));
-	console.log(isBlank('   '));
-	console.log(isBlank('  asdasd '));
+  function add(number) {
+    if (!isNumber(number)) {
+    	throw new Error('parametr(s) should be a number');
+    }
+    result += number;
+    return add;
+  }
+
+  function subtract(number) {
+    if (!isNumber(number)) {
+    	throw new Error('parametr(s) should be a number');
+    }
+    result -= number;
+    return subtract;
+  }
+
+  function divide(number) {
+    if (!isNumber(number) || number == 0) { // || result == 0) {
+    	throw new Error('parametr(s) should be a number which biggest than 0');
+    }
+    }
+    result /= number;
+    return divide;
+  }
+
+  function multiply(number) {
+    if (!isNumber(number)) {
+    	throw new Error('parametr(s) should be a number');
+    }
+    result *= number;
+    return multiply;
+  }
+
+  function getResult() {
+    return result;
+  }
+
+  function reset() {
+    return result = 0;
+  }
+
+  return {
+    add: add,
+    subtract: subtract,
+    divide: divide,
+    multiply: multiply,
+    getResult: getResult,
+    reset: reset
+  }
+
 }());
+
+Calculator.add(1)(2)(1)(4);
+console.log(Calculator.getResult());
+Calculator.subtract(2);
+console.log(Calculator.getResult());
+Calculator.divide(2);
+console.log(Calculator.getResult());
+Calculator.multiply(3);
+console.log(Calculator.getResult());
