@@ -1,0 +1,167 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<title>Document</title>
+	<link rel="stylesheet" href="css/style.css">
+	<link rel="stylesheet" href="css/normalize.css">
+</head>
+<body>
+	<header class="header">
+
+		<ul class="header__content block-content_center">
+			<li class="	item
+						content__item
+						item_small
+						block-content_center">Help Center</li>
+			<li class=" item
+						content__item
+						item_middle
+						block-content_center">
+				<div class="circle"></div>
+				<div class="">Our Support</div> <!-- ??? -->
+			</li>
+			<li class=" item
+						content__item
+						item_large
+						block-content_center">
+				<div class="user-account">John Doe</div>
+			</li>
+		</ul>
+
+	</header>
+	<div class="wrapper">
+		<aside class="slidebar__field">
+			<div class="sidebar">
+				<div class="field button__field">
+					<button id="add-book" class="button block-content_center">
+						<div class="button-text">add a book</div>
+					</button>
+
+					<form id="add-book_field" action="">
+						<label>Title <input id="title" class="add-book_input" type="text" required></label>
+						<label>Author <input id="author" class="add-book_input" type="text" required></label>
+						<button id="choose-image__text" class="button button__small block-content_center">
+							<input id="choose-image" type="file">
+						</button>
+						<button id="upload-book" class="button button__small block-content_center">
+							Upload book
+						</button>
+					</form>
+				</div>
+
+				<nav class="field menu__field">
+					<ul class="list">
+						<li class="item list__item">
+							<div class="item_icon item_icon-now item_align">Now Reading</div>
+						</li>
+						<li class="item list__item">
+							<div class="item_icon item_icon-browse item_align">Browse</div>
+						</li>
+						<li class="item list__item">
+							<div class="item_icon item_icon-buy item_align">Buy Books</div>
+						</li>
+						<li class="item list__item">
+							<div class="item_icon item_icon-books item_align">Favourite Books</div>
+						</li>
+						<li class="item list__item">
+							<div class="item_icon item_icon-wishlist item_align">Wishlist</div>
+						</li>
+						<li class="item list__item">
+							<div class="item_icon item_icon-history item_align">History</div>
+						</li>
+					</ul>
+				</nav>
+
+				<nav class="field list__field">
+					<ul class="list">
+						<li class="item list__item">
+							<div class="item_text item_icon-must">Must Read Titles</div>
+						</li>
+						<li class="item list__item">
+							<div class="item_text item_icon-best">Best of list</div>
+						</li>
+						<li class="item list__item">
+							<div class="item_text item_icon-clasic">Classic Novels</div>
+						</li>
+						<li class="item list__item">
+							<div class="item_text item_icon-non">Non Fiction</div>
+						</li>
+
+					</ul>
+				</nav>
+
+				<div class="field history__field">
+					<ul id="history">
+					</ul>
+				</div>
+
+			</div>
+		</aside>
+
+		<main class="main-content">
+			<div class="main-content__header">
+				<div class="main-content__title">
+						<span class="title__text">Browse Avaliable Books</span>
+				</div>
+				<div class="main-content__menu">
+					<div class="menu__items">
+
+						<ul class=" list
+									header__content
+									block-content_center">
+
+							<li class="item menu__item" id="all-books">
+								<a href="#">All Books</a>
+							</li>
+							<li class="item menu__item">
+								<a href="#">Most Recent</a>
+							</li>
+							<li class="item menu__item" id="most-popular">
+								<a href="#">Most Popular</a>
+							</li>
+							<li class="item menu__item">
+								<a href="#">Free Books</a>
+							</li>
+
+						</ul>
+					</div>
+
+					<div class="menu__search">
+						<input class="search" id="search" type="text" placeholder="Enter Keywords">
+					</div>
+				</div>
+			</div>
+
+			<div class="main-content__field">
+			</div>
+		</main>
+	</div>
+
+	<footer class="footer">
+		<div class=" item
+				 	 footer__button
+					 block-content_center">
+			<div class=" button_icon
+						 button_icon_question"></div>
+		</div>
+		<div class=" item
+				 	 footer__button
+					 block-content_center">
+			<div class=" button_icon
+						 button_icon_settings"></div>
+		</div>
+	</footer>
+<script src="js/main.js"></script>
+	<script src="js/model/BookModel.js"></script>
+	<script src="js/model/NotificationModel.js"></script>
+	<script src="js/storage/BooksStorage.js"></script>
+	<script src="js/storage/NotificationsStorage.js"></script>
+	<script src="js/view/BooksView.js"></script>
+	<script src="js/view/NotificationsView.js"></script>
+	<script src="js/controller/BooksController.js"></script>
+	<script src="js/controller/BooksNotification.js"></script>
+
+
+</body>
+</html>
