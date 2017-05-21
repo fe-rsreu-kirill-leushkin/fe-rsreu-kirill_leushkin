@@ -1,0 +1,24 @@
+<li class="item">
+  <div class="circle"></div>
+  <div class="text">Lorem ipsum dolor sit amet, consectetur adipisicing.</div>
+  <div class="delete"></div>
+</li>
+
+
+var btn = document.getElementById('button-add');
+var yes = document.getElementById('button-yes');
+var left = parseFloat(getComputedStyle(yes).left);
+var no = document.getElementById('button-no');
+var start = Date.now();
+
+btn.style.opacity = 0;
+var timer = setInterval(function() {
+  var timePassed = Date.now() - start;
+  if (timePassed > 100) {
+    clearInterval(timer);
+  } else {
+    yes.style.left += left - 100 + 'px';
+    no.style.left += left + 100 + 'px';
+    btn.style.display = 'none';
+  }
+}, 1000 / 60);
