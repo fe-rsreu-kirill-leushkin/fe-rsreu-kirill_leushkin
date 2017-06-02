@@ -2,13 +2,23 @@
 var BooksController = (function() {
   'use strict';
 
+  var currentBooks = Books.slice();
+
+  function getCurrentBooks() {
+    return currentBooks;
+  }
+
+  function setCurrentBooks(books) {
+    currentBooks = books.slice();
+  }
+
   function search(searchValue) {
     var output = [];
 
-    for (var i = 0; i < Books.length; i++) {
-      var book = Books[i];
-      var isTitleFound = book.title.toLowerCase().indexOf(searchValue) === -1;
-      var isAuthorFound = book.author.toLowerCase().indexOf(searchValue) === -1;
+    for (var i = 0; i < currentBooks.length; i++) {
+      var book = currentBooks[i];
+      var isTitleFound = book.title.toLowerCase().indexOf(searchValue) !== -1;
+      var isAuthorFound = book.author.toLowerCase().indexOf(searchValue) !== -1;
 
       if (isTitleFound || isAuthorFound) {
         output.push(book);
@@ -17,6 +27,7 @@ var BooksController = (function() {
 
     if (output.length) {
       BooksView.viewBooks(output);
+      setCurrentBooks(output);
     } else {
       BooksView.viewError('Not found');
     }
@@ -25,11 +36,12 @@ var BooksController = (function() {
   }
 
   function getMostPopularBooks() {
-    var output = '';
+    var output = [];
+    var books = getCurrentBooks();
 
-    for (let i = 0; i < Books.length; i++) {
-      if (Books[i].rating === 5) {
-        output += BooksView.createBook(Books[i]);
+    for (let i = 0; i < books.length; i++) {
+      if (books[i].rating === 5) {
+        output.push(books[i]);
       }
     }
 
@@ -37,42 +49,47 @@ var BooksController = (function() {
   }
 
   function changeRating(id, star, stars) {
-    var book = {};
+    var book = Books[id - 1];
+    book.rating = star;
 
-    for (let i = 0; i < Books.length; i++) {
-      if (Books[i].id == id) {
-        book = Books[i];
-        Books[i].rating = star;
-        for (let j = 0; j < 5; j++) {
-          if (star) {
-            // TODO: Move to view
-            BooksView.starFull(stars[j]);
-            star--;
-          } else {
-            BooksView.starEmpty(stars[j]);
-          }
-        }
-      }
-    }
+    setTimeout(function() {
+      Request.sendRatingRequest(book, star, stars);
+    }, 5000);
 
     return book;
+  }
+
+  function updateStars(star, stars) {
+    for (var j = 0; j < 5; j++) {
+      if (star) {
+        BooksView.drawFullStar(stars[j]);
+        star--;
+      } else {
+        BooksView.drawEmptyStar(stars[j]);
+      }
+    }
   }
 
   function addBook(id, image, title, author, rating) {
     id = Books[Books.length - 1].id + 1;
     var newBook = new Book(id, image, title, author, rating);
-    Books.push(newBook);
-    Main.update();
+
+    setTimeout(function(){
+      Request.sendBookRequest(newBook);
+    }, 5000);
 
     return newBook;
   }
 
-  Main.update();
+  BooksView.initialize();
 
   return {
-    search: search,
     getMostPopularBooks: getMostPopularBooks,
+    setCurrentBooks: setCurrentBooks,
+    getCurrentBooks: getCurrentBooks,
     changeRating: changeRating,
+    updateStars: updateStars,
     addBook: addBook,
+    search: search,
   };
 }());
