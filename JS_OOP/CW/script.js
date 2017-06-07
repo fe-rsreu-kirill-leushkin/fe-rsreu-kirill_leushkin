@@ -131,7 +131,7 @@
   }
 
   Traingle.prototype = Object.create(Shape.prototype);
-  Traingle.constructor = Traingle;
+  Traingle.prototype.constructor = Traingle;
 
 
   /*
